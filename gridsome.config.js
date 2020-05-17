@@ -9,6 +9,14 @@ module.exports = {
         remark: {}
       }
     },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'pages/**/*.md',
+        typeName: 'Pages',
+        remark: {}
+      }
+    }    
   ],
   transformers: {
     remark: {}

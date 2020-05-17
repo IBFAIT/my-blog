@@ -31,7 +31,7 @@ query {
 <script>
 export default {
   metaInfo: {
-    title: "My blog"
+    title: "Neuropsychologische Praxis Dr. Denise Long"
   }
 };
 </script>
