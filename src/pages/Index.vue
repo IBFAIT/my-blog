@@ -13,17 +13,6 @@
       </div>
     </div>
 
-    <div class="container">
-      <h1>List Pages</h1>
-      <div v-for="page in $page.pages.edges" :key="page.id" class="article d-flex">
-        <div class="article__body">
-          <g-link :to="page.node.path" class="article__link"></g-link>
-          <h1 class="article__title">{{page.node.title}}</h1>
-          <p class="article__abstract">{{page.node.name}}</p>
-        </div>
-      </div>
-    </div>
-
   </Layout>
 </template>
 <page-query>
@@ -34,21 +23,6 @@ query {
         title
         abstract
         image
-        path
-      }
-    }
-  }
-}
-</page-query>
-
-<page-query>
-query {
-  pages: allPages {
-    edges {
-      node {
-        name
-        title
-        abstract
         path
       }
     }
