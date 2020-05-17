@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'My blog',
+  siteName: 'Neuropsychologische Praxis Dr. Denise Long',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
