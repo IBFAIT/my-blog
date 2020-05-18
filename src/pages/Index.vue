@@ -13,6 +13,23 @@
       </div>
     </div>
 
+
+    <div class="container">
+      <h1>List pages</h1>
+      <div v-for="pg in $static.pgs.edges" :key="pg.id" class="article d-flex">
+        <div class="article__img"
+             :style="{ 'background-image': 'url(' + pg.node.image + ')' }"></div>
+        <div class="article__body">
+          <g-link :to="pg.node.path" class="article__link"></g-link>
+          <h1 class="article__title">{{pg.node.title}}</h1>
+          <p class="article__abstract">{{pg.node.abstract}}</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
   </Layout>
 </template>
 <page-query>
@@ -29,6 +46,20 @@ query {
   }
 }
 </page-query>
+<static-query>
+query {
+  pgs: allPages {
+    edges {
+      node {
+        title
+        abstract
+        image
+        path
+      }
+    }
+  }
+}
+</static-query>
 <script>
 export default {
   metaInfo: {

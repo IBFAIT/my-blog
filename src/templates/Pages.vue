@@ -19,6 +19,7 @@ query ($path: String!) {
     title
     name    
     content
+    image
   }
 }
 </page-query>
