@@ -1,4 +1,5 @@
 ---
+name: home
 title: Neuropsychologische Praxis Dr. Denise Long
 abstract: Willkommen in der neuropsychologischen Praxis von Dr. phil. Denise Long, Fachpsychologin für Neuropsychologie FSP.
 image: /uploads/logo-512.png
