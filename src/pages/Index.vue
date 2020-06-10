@@ -1,6 +1,20 @@
 <template>
   <Layout>
     <div class="container">
+      <h1>List Home</h1>
+      <div v-for="h in $static.home.edges" :key="h.id" class="article d-flex">
+        <div class="article__img"
+             :style="{ 'background-image': 'url(' + home.node.image + ')' }"></div>
+        <div class="article__body">
+          <g-link :to="home.node.path" class="article__link"></g-link>
+          <h1 class="article__title">{{home.node.title}}</h1>
+          <p class="article__abstract">{{home.node.abstract}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
       <h1>List articles</h1>
       <div v-for="article in $page.articles.edges" :key="article.id" class="article d-flex">
         <div class="article__img"
@@ -46,6 +60,20 @@ query {
   }
 }
 </page-query>
+
+<static-query>
+query {
+  home: allPages(filter: { home: { eq: true }}) {
+    edges {
+      node {
+        id
+        title
+      }
+    }
+  }
+}
+</static-query>
+
 <static-query>
 query {
   pgs: allPages {
